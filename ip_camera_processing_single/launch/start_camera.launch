@@ -1,0 +1,11 @@
+<launch>
+  <param name="model_name" value="efficientnet_b0" />
+  <param name="model_path" value="/home/ganeshvar/catkin_ws/src/models/efficientnet_model_epoch_19.pth" />
+  <param name="video_url" value="http://192.168.2.30:4747/video" />
+
+  <node name="ip_camera_processor" pkg="ip_camera_processing_single" type="ip_camera_processor_single.py" output="screen">
+    <param name="model_name" value="efficientnet_b0" />
+    <param name="model_path" value="/home/ganeshvar/catkin_ws/src/models/efficientnet_model_epoch_19.pth" />
+    <param name="video_url" value="http://192.168.2.30:4747/video" />
+  </node>
+</launch>

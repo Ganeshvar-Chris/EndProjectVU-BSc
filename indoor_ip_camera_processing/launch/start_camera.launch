@@ -1,0 +1,15 @@
+<launch>
+    <!-- Parameters -->
+    <arg name="model_name" default="efficientnet_b0" />
+    <arg name="model_path" default="/home/ganeshvar/catkin_ws/src/models/indoor_efficientnet_epoch_20.pth" />
+    <arg name="video_url" default="http://192.168.2.30:4747/video" />
+    <arg name="csv_file" default="/home/ganeshvar/catkin_ws/src/indoor_ip_camera_processing/logs/predictions_log.csv" />
+
+    <!-- Node -->
+    <node name="indoor_ip_camera_processor" pkg="indoor_ip_camera_processing" type="indoor_ip_camera_processor.py" output="screen">
+        <param name="model_name" value="$(arg model_name)" />
+        <param name="model_path" value="$(arg model_path)" />
+        <param name="video_url" value="$(arg video_url)" />
+        <param name="csv_file" value="$(arg csv_file)" />
+    </node>
+</launch>
